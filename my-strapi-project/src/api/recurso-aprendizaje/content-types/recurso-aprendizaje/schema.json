@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recurso_aprendizajes",
+  "info": {
+    "singularName": "recurso-aprendizaje",
+    "pluralName": "recurso-aprendizajes",
+    "displayName": "RecursoAprendizaje",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "blocks",
+      "required": true
+    },
+    "tipo_recurso": {
+      "type": "enumeration",
+      "enum": [
+        "artículo",
+        "video",
+        "otro"
+      ],
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo"
+    }
+  }
+}
